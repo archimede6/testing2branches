@@ -1,1 +1,17 @@
-
+name: Merge to store themes
+ 
+on:
+ push:
+   branches:
+     - online
+   paths-ignore:
+     - 'templates/*.json'
+     - 'config/*.json'
+     - 'locales/*.json'
+ pull_request:
+   branches:
+     - online
+   paths-ignore:
+     - 'templates/*.json'
+     - 'config/*.json'
+     - 'locales/*.json'
