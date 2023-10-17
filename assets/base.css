@@ -16,7 +16,7 @@
 .color-inverse {
   --color-foreground: var(--color-base-background-1);
   --color-background: var(--color-base-text);
-  --gradient-background: red;
+  --gradient-background: green;
 }
 
 .color-accent-1 {
