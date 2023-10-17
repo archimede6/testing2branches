@@ -3,13 +3,26 @@ name: Merge to store themes
 on:
  push:
    branches:
-     - online
+     - main
    paths-ignore:
      - 'templates/*.json'
      - 'config/*.json'
  pull_request:
    branches:
-     - online
+     - main
    paths-ignore:
      - 'templates/*.json'
      - 'config/*.json'
+
+jobs:
+ build:
+   runs-on: ubuntu-latest
+   steps:
+      - uses: actions/checkout@v2
+      - name: Pushes to all sites
+        run: |
+          git checkout master
+          git pull
+          git checkout -b online
+          git merge master
+          git push -f --set-upstream origin online
